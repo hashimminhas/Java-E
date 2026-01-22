@@ -5,6 +5,10 @@ import java.util.List;
 
 public class ArrayTester {
     
+    public static void main(String[] args) {
+        testAll();
+    }
+    
     public static void testAll() {
         System.out.println("=".repeat(60));
         System.out.println("ARRAY PACKAGE TESTING - ALL CLASSES");

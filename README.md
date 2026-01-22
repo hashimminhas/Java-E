@@ -260,3 +260,158 @@ Run `StreamTester.main()` to execute comprehensive tests for all 8 classes with:
 - Stream-based implementations for concise, readable code
 - Demonstrates both stream and traditional approaches
 - Comprehensive test coverage with edge cases
+
+---
+
+# String-Theory Package - Java String Manipulation & Date/Time Exercises
+
+A collection of Java classes demonstrating method overloading, string operations, date/time handling, and algorithm implementations in the `sprint` package.
+
+## 🚀 Quick Start
+
+```bash
+# Compile
+javac -d out Exercise/string-theory/*.java
+
+# Run the comprehensive test suite
+java -cp out sprint.StringTheoryTester
+```
+
+## 📁 Project Structure
+
+- **string-theory/** - Contains 7 sprint package classes + StringTheoryTester
+- **StringTheoryTester.java** - Comprehensive test suite for all string-theory classes
+
+## 📚 Classes Overview
+
+### 1. AreaCalculator
+Demonstrates method overloading to calculate areas of different shapes.
+```java
+calculateArea(5);           // Square: 25.0
+calculateArea(5, 10);       // Rectangle: 50.0
+calculateArea(7, true);     // Circle: ~153.94
+calculateArea(7, false);    // NaN (invalid circle)
+```
+**Features:** Method overloading with different parameter combinations
+
+### 2. PrimeFinder
+Finds all prime numbers up to a specified limit using optimized trial division.
+```java
+findPrimesUpTo(30); // [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+findPrimesUpTo(10); // [2, 3, 5, 7]
+```
+**Algorithm:** Trial division with √n optimization, skips even numbers
+
+### 3. DayChecker
+Checks the type of day for a given LocalDate.
+```java
+checkDayType(LocalDate.of(2024, 8, 26));  // "Weekday" (Monday)
+checkDayType(LocalDate.of(2024, 8, 28));  // "Hump Day!" (Wednesday)
+checkDayType(LocalDate.of(2024, 8, 31));  // "Weekend" (Saturday)
+```
+**Features:** Switch statement, DayOfWeek enum, special Wednesday handling
+
+### 4. WeekendCalculator
+Counts weekend days (Saturday & Sunday) in a date range using streams.
+```java
+WeekendCalculator calculator = new WeekendCalculator();
+calculator.countWeekendDays(
+    LocalDate.of(2024, 8, 1), 
+    LocalDate.of(2024, 8, 31)
+); // Returns: 10
+```
+**Features:** Stream API, datesUntil(), DayOfWeek filtering
+
+### 5. PalindromeChecker
+Checks if a string is a palindrome, ignoring punctuation and case.
+```java
+isPalindrome("A man, a plan, a canal, Panama");  // true
+isPalindrome("Hello, World!");                    // false
+isPalindrome("racecar");                          // true
+```
+**Features:** Regex cleaning, case normalization, StringBuilder reversal
+
+### 6. AnagramChecker
+Checks if two strings are anagrams by comparing sorted characters.
+```java
+areAnagrams("Listen", "Silent");  // true
+areAnagrams("Listen", "Hello");   // false
+```
+**Features:** Character array sorting, case-insensitive comparison, null handling
+
+### 7. CalendarBuilder
+Builds a formatted calendar string for a given month and year.
+```java
+buildCalendar("August", 2024);
+// Output:
+// AUGUST 2024
+// Mon Tue Wed Thu Fri Sat Sun
+//            1   2  3  4
+//   5  6  7  8  9 10 11
+//  12 13 14 15 16 17 18
+//  ...
+```
+**Features:** YearMonth API, dynamic day positioning, formatted output
+
+## 🧪 Testing
+
+Run `StringTheoryTester.main()` to execute comprehensive tests for all 7 classes with:
+- Multiple test cases per class (22 total tests)
+- Expected vs actual output comparison
+- Formatted test results with pass/fail indicators
+- Calendar visualization
+- Edge case validation (null, empty, leap years)
+
+## 📊 Class Features Summary
+
+| Class | Key Technology | Input | Output |
+|-------|---------------|-------|--------|
+| AreaCalculator | Method Overloading | double/boolean | double |
+| PrimeFinder | Algorithm | int limit | List<Integer> |
+| DayChecker | Switch/Enum | LocalDate | String |
+| WeekendCalculator | Stream API | Date Range | long |
+| PalindromeChecker | Regex/StringBuilder | String | boolean |
+| AnagramChecker | Array Sorting | String, String | boolean |
+| CalendarBuilder | StringBuilder/YearMonth | String, int | String |
+
+## 🛠️ Technologies
+
+- Java 17+
+- Java Time API (LocalDate, YearMonth, DayOfWeek)
+- StringBuilder for string manipulation
+- Regular Expressions
+- Arrays utility class
+- Method Overloading
+
+## 💡 Key Concepts Demonstrated
+
+### Method Overloading
+- Same method name with different parameters
+- Different return types based on input
+- Type-based method resolution
+
+### Date/Time API
+- `LocalDate` - Date without time zone
+- `YearMonth` - Month and year handling
+- `DayOfWeek` - Day enumeration
+- `datesUntil()` - Stream of dates in range
+
+### String Manipulation
+- Regular expressions for cleaning
+- `StringBuilder` for efficient string building
+- Character array operations
+- Case normalization
+
+### Algorithms
+- Prime number detection (trial division)
+- Palindrome verification (reversal)
+- Anagram detection (sorting)
+- Calendar layout calculation
+
+## 📝 Notes
+
+- All classes in `sprint` package
+- Comprehensive null safety checks
+- Edge case handling (leap years, empty strings, etc.)
+- Clean, readable implementations
+- Test coverage for all methods

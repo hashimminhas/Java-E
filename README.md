@@ -719,3 +719,182 @@ Run `ExamTester.main()` to execute comprehensive tests for all 5 classes with:
 - Comprehensive test coverage
 - Production-ready implementations
 
+---
+
+# M-P Package - Miscellaneous Programming Exercises
+
+A diverse collection of Java classes covering mathematical operations, string processing, and ASCII art generation in the `sprint` package.
+
+## 🚀 Quick Start
+
+```bash
+# Compile
+javac -d out Exercise/M-P/*.java
+
+# Run tests
+java -cp out sprint.MPTester
+```
+
+## 📁 Project Structure
+
+```
+M-P/
+├── PowerCalculator.java       # Calculate base^exponent using loops
+├── DigitSum.java             # Sum all digits in a number
+├── PrimeChecker.java         # Check if number is prime
+├── SmallestDivisor.java      # Find smallest prime divisor
+├── StringEncryption.java     # atoi/itoa string-int conversion
+├── Tree.java                 # ASCII tree drawing
+├── WordCounter.java          # Count words in sentence
+└── MPTester.java            # 43 comprehensive test cases
+```
+
+## 📚 Classes Overview
+
+### 1. PowerCalculator
+Calculates power (base^exponent) using iterative multiplication.
+```java
+PowerCalculator calc = new PowerCalculator();
+calc.calculatePower(2, 3); // 8 (2³)
+calc.calculatePower(5, 0); // 1 (any number to power 0)
+calc.calculatePower(2, -3); // 0 (negative exponent invalid)
+```
+**Edge Cases**: Returns 0 for negative exponents, handles zero base
+
+### 2. DigitSum
+Sums all digits in a number using modulo and division.
+```java
+DigitSum.sumOfDigits(12345); // 15 (1+2+3+4+5)
+DigitSum.sumOfDigits(-123);  // 6 (absolute value)
+DigitSum.sumOfDigits(0);     // 0
+```
+**Edge Cases**: Handles negative numbers by converting to positive
+
+### 3. PrimeChecker
+Determines if a number is prime using trial division optimization.
+```java
+PrimeChecker.isPrime(7);  // true
+PrimeChecker.isPrime(8);  // false
+PrimeChecker.isPrime(2);  // true (smallest prime)
+PrimeChecker.isPrime(1);  // false (not prime by definition)
+```
+**Edge Cases**: Returns false for numbers ≤ 1 and negative numbers
+
+### 4. SmallestDivisor
+Finds the smallest prime divisor of a number (returns itself if prime).
+```java
+SmallestDivisor finder = new SmallestDivisor();
+finder.smallestDivisor(10); // 2
+finder.smallestDivisor(15); // 3
+finder.smallestDivisor(17); // 17 (prime, returns itself)
+```
+**Edge Cases**: Returns 1 for input 1, 0 for invalid inputs
+
+### 5. StringEncryption
+Converts between strings and integers with two methods:
+- **atoi()** - String to integer conversion
+- **itoa()** - Integer to string conversion
+
+```java
+StringEncryption converter = new StringEncryption();
+
+// String to Int
+converter.atoi("123");   // 123
+converter.atoi("-456");  // -456
+converter.atoi("12a3");  // 0 (invalid characters)
+
+// Int to String
+converter.itoa(789);     // "789"
+converter.itoa(-321);    // "-321"
+converter.itoa(0);       // "0"
+```
+**Edge Cases**: Handles null, empty strings, Integer.MIN_VALUE, invalid characters
+
+### 6. Tree
+Draws an ASCII art tree with branches and trunk.
+```java
+Tree.tree(5);
+// Output:
+//     ^
+//    /*\
+//   /***\
+//  /*****\
+// /*******\
+//    |||
+
+Tree.tree(3);
+// Output:
+//   ^
+//  /*\
+// /***\
+//   |
+```
+**Pattern**: 
+- Top: `^`
+- Branches: `/` + `*` repeated + `\`
+- Trunk: `|` repeated (height/5 + 1 rows)
+
+### 7. WordCounter
+Counts words in a sentence using state machine approach.
+```java
+WordCounter counter = new WordCounter();
+counter.countWords("Hello world");           // 2
+counter.countWords("Hello   world   test");  // 3 (multiple spaces)
+counter.countWords("Hello, world!");         // 2 (ignores punctuation)
+counter.countWords("");                      // 0
+```
+**Logic**: Uses two-state machine (0=outside word, 1=inside word), only counts letter transitions
+
+## 🧪 Testing
+
+Run comprehensive test suite:
+```bash
+java -cp out sprint.MPTester
+```
+
+### Test Coverage
+
+| Class | Test Cases | Coverage |
+|-------|------------|----------|
+| PowerCalculator | 6 | Basic power, exponent 0/1, negative, large, zero base |
+| DigitSum | 5 | Positive, single digit, zero, negative, large number |
+| PrimeChecker | 7 | Primes, composites, 0/1/2, negative, large prime |
+| SmallestDivisor | 6 | Even, odd, prime, edge cases (0/1/2) |
+| StringEncryption | 9 | atoi (pos/neg/zero/empty/null/invalid), itoa (pos/neg/zero) |
+| Tree | 3 | Heights 0/3/5, visual validation |
+| WordCounter | 7 | Simple, spaces, empty, single, punctuation, special chars |
+| **Total** | **43** | **100% pass rate** |
+
+## 📊 Complexity Analysis
+
+| Class | Time Complexity | Space Complexity | Algorithm Type |
+|-------|----------------|------------------|----------------|
+| PowerCalculator | O(exp) | O(1) | Iterative multiplication |
+| DigitSum | O(log n) | O(1) | Digit extraction |
+| PrimeChecker | O(√n) | O(1) | Trial division |
+| SmallestDivisor | O(√n) | O(1) | Optimized divisor search |
+| StringEncryption.atoi | O(n) | O(1) | Linear parsing |
+| StringEncryption.itoa | O(log n) | O(log n) | Digit extraction + reverse |
+| Tree | O(h²) | O(h) | ASCII pattern generation |
+| WordCounter | O(n) | O(1) | Single-pass state machine |
+
+## 🛠️ Technologies & Concepts
+
+- **Java Core**: Static methods, instance methods, loops, conditionals
+- **String Processing**: Character iteration, validation, state machines
+- **Mathematical Algorithms**: Power calculation, prime checking, divisor finding
+- **Number Theory**: Prime numbers, divisibility, digit manipulation
+- **ASCII Art**: Pattern generation, spacing calculations
+- **Edge Case Handling**: Null safety, invalid input validation
+- **String Building**: Efficient string construction for itoa()
+
+## 💡 Key Concepts
+
+- **Iterative Power Calculation**: Repeated multiplication instead of recursion
+- **Prime Number Optimization**: Only check divisors up to √n
+- **State Machine Pattern**: Two-state approach for word counting
+- **atoi/itoa Implementation**: Core string-number conversion algorithms
+- **ASCII Art Generation**: Mathematical pattern for tree branches and spacing
+- **Null Safety**: Defensive programming with null/empty checks
+- **Static vs Instance Methods**: Mix of both based on use case
+

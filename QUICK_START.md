@@ -12,6 +12,7 @@ D:\Kood\
 │   ├── string-theory\   ← String & Date/Time (7 classes)
 │   ├── recursion\       ← Recursive algorithms (7 classes)
 │   ├── Exam\            ← Challenge problems (5 classes)
+│   ├── M-P\             ← Miscellaneous Programming (7 classes)
 │   ├── src\
 │   │   └── Main.java
 │   └── out\             ← Compiled classes
@@ -30,6 +31,7 @@ javac -d out stream/*.java
 javac -d out string-theory/*.java
 javac -d out recursion/*.java
 javac -d out Exam/*.java
+javac -d out M-P/*.java
 ```
 
 ### Run All Test Suites
@@ -41,6 +43,7 @@ java -cp out sprint.StreamTester
 java -cp out sprint.StringTheoryTester
 java -cp out sprint.RecursionTester
 java -cp out ExamTester
+java -cp out sprint.MPTester
 ```
 
 ### Compile and Run in One Command
@@ -60,6 +63,9 @@ javac -d out recursion/*.java && java -cp out sprint.RecursionTester
 
 # Exam package
 javac -d out Exam/*.java && java -cp out ExamTester
+
+# M-P package
+javac -d out M-P/*.java && java -cp out sprint.MPTester
 ```
 
 ## 🧪 Testing Individual Classes
@@ -125,6 +131,22 @@ java -cp out CharOccurrences
 # ... etc
 ```
 
+### M-P Package (sprint package)
+
+```bash
+# Compile all M-P classes first
+javac -d out M-P/*.java
+
+# Test specific class
+java -cp out sprint.PowerCalculator
+java -cp out sprint.DigitSum
+java -cp out sprint.PrimeChecker
+java -cp out sprint.SmallestDivisor
+java -cp out sprint.StringEncryption
+java -cp out sprint.Tree
+java -cp out sprint.WordCounter
+```
+
 ## 📦 Package Summary
 
 | Package | Classes | Tests | Focus Area |
@@ -134,13 +156,14 @@ java -cp out CharOccurrences
 | **string-theory** | 7 + tester | StringTheoryTester | Strings, dates, method overloading |
 | **recursion** | 7 + tester | RecursionTester | Recursive algorithms, no loops |
 | **Exam** | 5 + tester | ExamTester | Interview challenges, pattern matching |
+| **M-P** | 7 + tester | MPTester | Math operations, string processing, ASCII art |
 
 ## 🎯 Run All Tests at Once
 
 ```bash
 # Compile everything
 cd D:\Kood\Exercise
-javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java
+javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java M-P/*.java
 
 # Run all test suites
 java -cp out sprint.ArrayTester
@@ -148,12 +171,13 @@ java -cp out sprint.StreamTester
 java -cp out sprint.StringTheoryTester
 java -cp out sprint.RecursionTester
 java -cp out ExamTester
+java -cp out sprint.MPTester
 ```
 
 Or use this PowerShell one-liner:
 
 ```powershell
-cd D:\Kood\Exercise; javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java; java -cp out sprint.ArrayTester; java -cp out sprint.StreamTester; java -cp out sprint.StringTheoryTester; java -cp out sprint.RecursionTester; java -cp out ExamTester
+cd D:\Kood\Exercise; javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java M-P/*.java; java -cp out sprint.ArrayTester; java -cp out sprint.StreamTester; java -cp out sprint.StringTheoryTester; java -cp out sprint.RecursionTester; java -cp out ExamTester; java -cp out sprint.MPTester
 ```
 
 ## 📊 Test Results Summary
@@ -205,7 +229,7 @@ javac -d out [package]/*.java
 ```
 
 ### Package Declaration Issues
-- **array, stream, string-theory, recursion** use `package sprint;`
+- **array, stream, string-theory, recursion, M-P** use `package sprint;`
 - **Exam** classes have no package declaration (default package)
 
 ### Cannot Find Symbol Errors
@@ -213,7 +237,7 @@ javac -d out [package]/*.java
 # Clean and rebuild
 rm -r out
 mkdir out
-javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java
+javac -d out array/*.java stream/*.java string-theory/*.java recursion/*.java Exam/*.java M-P/*.java
 ```
 
 ## 📖 Documentation
@@ -229,5 +253,6 @@ For project architecture and structure, see [PROJECT_OVERVIEW.md](PROJECT_OVERVI
 - **String-Theory Package**: 25/25 tests ✓
 - **Recursion Package**: 41/41 tests ✓
 - **Exam Package**: 34/34 tests ✓
+- **M-P Package**: 43/43 tests ✓
 
-**Total: 128 tests passing across 37 classes!**
+**Total: 171 tests passing across 44 classes!**

@@ -6,11 +6,11 @@ Comprehensive documentation of the complete Java exercise collection covering ar
 
 | Metric | Count |
 |--------|-------|
-| **Total Packages** | 5 |
-| **Total Classes** | 37 |
-| **Test Classes** | 5 |
-| **Total Test Cases** | 128+ |
-| **Lines of Code** | ~4,000+ |
+| **Total Packages** | 6 |
+| **Total Classes** | 44 |
+| **Test Classes** | 6 |
+| **Total Test Cases** | 171+ |
+| **Lines of Code** | ~5,000+ |
 | **Pass Rate** | 100% ✓ |
 
 ## 🗂️ Package Architecture
@@ -71,6 +71,16 @@ D:\Kood\
 │   │   ├── IsAnadrome.java
 │   │   ├── WildcardCompare.java
 │   │   └── ExamTester.java         ✓ 34 tests
+│   │
+│   ├── 📦 M-P\                      [sprint package]
+│   │   ├── PowerCalculator.java
+│   │   ├── DigitSum.java
+│   │   ├── PrimeChecker.java
+│   │   ├── SmallestDivisor.java
+│   │   ├── StringEncryption.java
+│   │   ├── Tree.java
+│   │   ├── WordCounter.java
+│   │   └── MPTester.java           ✓ 43 tests
 │   │
 │   ├── src\
 │   │   └── Main.java
@@ -190,6 +200,26 @@ D:\Kood\
 
 ---
 
+### 6. M-P Package (sprint)
+
+**Focus:** Mathematical operations, string processing, ASCII art
+
+| Class | Description | Complexity |
+|-------|-------------|------------|
+| PowerCalculator | Calculate base^exponent using loops | O(exp) |
+| DigitSum | Sum all digits in a number | O(log n) |
+| PrimeChecker | Check if number is prime | O(√n) |
+| SmallestDivisor | Find smallest prime divisor | O(√n) |
+| StringEncryption | atoi & itoa string-int conversion | O(n) |
+| Tree | Draw ASCII art tree with branches | O(h²) |
+| WordCounter | Count words using state machine | O(n) |
+
+**Technologies:** Math operations, string manipulation, ASCII patterns
+
+**Key Patterns:** Iterative algorithms, number theory, state machines
+
+---
+
 ## 🧪 Testing Infrastructure
 
 ### Test Suite Statistics
@@ -201,7 +231,8 @@ D:\Kood\
 | StringTheoryTester | 7 | 25 tests | 100% ✓ |
 | RecursionTester | 7 | 41 tests | 100% ✓ |
 | ExamTester | 5 | 34 tests | 100% ✓ |
-| **TOTAL** | **37** | **128+** | **100% ✓** |
+| MPTester | 7 | 43 tests | 100% ✓ |
+| **TOTAL** | **44** | **171+** | **100% ✓** |
 
 ### Test Coverage
 
@@ -376,6 +407,7 @@ Boundary Tests:   25+ checks  ██████░░░░░░░░░░�
 - **String-Theory Package**: All 25 test cases pass
 - **Recursion Package**: All 41 test cases pass
 - **Exam Package**: All 34 test cases pass
+- **M-P Package**: All 43 test cases pass
 
 ### Code Quality
 
@@ -441,8 +473,8 @@ For issues, questions, or contributions:
 
 ---
 
-**Last Updated:** January 23, 2026
+**Last Updated:** January 23, 2025
 
 **Project Status:** ✅ Complete & Fully Tested
 
-**Total Classes:** 37 | **Total Tests:** 128+ | **Pass Rate:** 100%
+**Total Classes:** 44 | **Total Tests:** 171+ | **Pass Rate:** 100%
